@@ -1,51 +1,80 @@
 //primera parte 
-const card = document.getElementById("card");
-const inputs = document.querySelectorall("#inputEmail4");
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input");
 
 const expresiones = {
 
-    card: /^[0-9\_\-]{4,16}$/,
-    nombre: /^ [a - zA - ZA - ÿ\s]{1,40}$/,
-    password: /^.{4,12}$/,
+    tarjeta: /^[0-9]{4,16}$/,
+    numeros: /^[0-9]{2,4}$/,
+    nombre: /^[a - zA - ZA]{1,20}$/,
+    apellido: /^[a - zA - ZA]{1,20}$/,
+    amount: /^[0-9]{3,15}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-.]+$/,
 
 }
 
-const validarformulario = function (e) {
+const validarformulario = (e) => {
+
     switch (e.target.name) {
         case "tarjeta":
-            if (expresiones.card.test(e.target.value)) {
-                
-            }
-
-            else{
-                document.getElementById("grupo_tarjeta").classList.add("grupo_card-incorrecto")
-
-            }
-
+            validarCampo(expresiones.tarjeta, e.target, "tarjeta");
             break;
-        case "digitos ":
+
+        case "digitos":
+            validarCampo(expresiones.numeros, e.target, "digitos");
+
             break;
         case "amount1":
-            break;
-        case "nombre ":
+            validarCampo(expresiones.amount, e.target, "amount1");
 
+            break;
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, "nombre");
             break;
         case "apellido":
-            break;
-        case "ciudad":
+            validarCampo(expresiones.apellido, e.target, "apellido");
 
+            break;
+        case "inputCity":
+            validarCampo(expresiones.numeros, e.target, "ciudad");
+
+            break;
     }
 
 }
+
+const validarCampo= (expresion, input, campo) =>{
+    if(expresion.test(input.value)){
+        document.getElementById(`grupo_${campo}`).classList.remove("grupo_card-incorrecto")
+        document.getElementById(`grupo_${campo}`).classList.add("grupo_card-correcto")
+        document.querySelector(`#grupo_${campo} i `).classList.add("fa-circle-check")
+        document.querySelector(`#grupo_${campo} i `).classList.remove ("fa-circle-xmark")
+        document.querySelector(`#grupo_${campo} .formulario_error`).classList.remove ("formulario_error-activo")
+
+    } else {
+        console.log(campo)
+        document.getElementById(`grupo_${campo}`).classList.add("grupo_card-incorrecto")
+        document.getElementById(`grupo_${campo}`).classList.remove("grupo_card-correcto")
+        document.querySelector(`#grupo_${campo} i `).classList.add("fa-circle-xmark")
+        document.querySelector(`#grupo_${campo} i `).classList.remove ("fa-circle-check")
+        document.querySelector(`#grupo_${campo} .formulario_error`).classList.add ("formulario_error-activo")
+
+
+    }
+}
+
+
 inputs.forEach((input) => {
-    input.addEventListener("keyup")
-    input.addEventListener("blur")
+    input.addEventListener("keyup", validarformulario);
+    input.addEventListener("blur", validarformulario);
 
 
-});
 
-formulario.addEventListener("submit", function (e) {
-    e.preventDefault();
+})
+
+
+formulario.addEventListener("submit", (e) => {
+
+
 
 })
