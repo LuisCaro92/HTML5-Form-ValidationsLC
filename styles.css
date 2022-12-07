@@ -1,0 +1,55 @@
+
+
+.formulario_error{
+
+    font-size: 12px;
+    display: none;
+}
+.formulario_error-activo{
+
+    display: bloque;
+}
+.formulario-input{
+    position: relative;
+}
+
+.validacion-estado{
+    position: absolute;
+    right:10px;
+    bottom: 12px;
+    z-index:100;
+    font-size: 16px;
+    opacity: 0;
+ 
+
+}
+
+.alert{
+    display: none;
+}
+
+.btnsend{
+ flex-direction: "colum";
+
+}
+
+.formulario__mensaje-exito{
+    font-style: initial;
+    font-size: 20px;
+    color: #119200;
+    display:none;
+}
+.formulario__mensaje-exito-activo{
+    display: block;
+}
+
+
+.grupo_card-correcto .validacion-estado{
+color:#119200;
+display: 1;
+}
+
+.grupo_card-incorrecto .card_label{
+    color:red;
+    display: 1;
+    }

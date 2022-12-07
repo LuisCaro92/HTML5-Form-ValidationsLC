@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 
@@ -28,21 +29,25 @@
                             <div class="alert alert-danger" role="alert">
                                 This is a danger alert—check it out!
                             </div>
-                            <form>
+                            <form id="card">
                                 <div class="form-row">
-                                    <div class="form-group col-md-5">
-                                        <label for="inputEmail4"><b>Card #</b></label>
-                                        <input type="email" class="form-control" id="inputEmail4"
-                                            placeholder="XXXXXXXXXXX">
+                                    <div class card=" grupo_card  grupo_card-incorrecto form-group col-md-5" id="grupo_tarjeta">
+                                        <label for="inputEmail4" class="card_label"><b>Card #</b></label>
+                                        <div class="formulario-input">
+                                            <input type="email " class="card form-control" name= "tarjeta"  id="inputEmail4">
+                                            <i class= "validacion-estado fa-solid fa-circle-xmark"></i>
+                                        </div>
+                                        <p class="formulario_error">La tarjeta solo puede contener numeros y un maximo
+                                            de 12 numeros</p>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="inputPassword4"><b>CVC #</b></label>
-                                        <input type="password" class="form-control" id="inputPassword4"
+                                        <input type="password" class="form-control" name=" digitos"   id="inputPassword4"
                                             placeholder="000000">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputPassword4"><b>Amount</b></label>
-                                        <input type="password" class="form-control" id="inputPassword4"
+                                        <input type="password" class="form-control"  name=" amount1" id="inputPassword4"
                                             placeholder="Amount">
                                     </div>
                                 </div>
@@ -50,17 +55,17 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword4"><b>First Name</b></label>
-                                        <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                                        <input type="password" class="form-control"  name= "nombre" id="inputPassword4" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword4"><b>Last Name</b></label>
-                                        <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                                        <input type="password" class="form-control" name=" apellido"  id="inputPassword4" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-row ">
                                     <div class="form-group col-md-6 ">
                                         <label for="inputCity"><b>City</b></label>
-                                        <input type="text" class="form-control" id="inputCity">
+                                        <input type="text" class="form-control"  name="ciudad"   id="inputCity">
                                     </div>
                                     <div class="form-group col-md-3 ">
                                         <label for="inputState"><b>State</b></label>
@@ -128,8 +133,12 @@
                     <!-------botn final-->
                     <section id="Boton ">
                         <div class="card-footer text-right">
+
                             <button type="button" class="btn btn-secondary">Cancel</button>
-                            <button type="button" class="btn btn-primary ">Send</button>
+
+                            <button type="submit" class="btnsend btn-primary ">Send</button>
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"><b>Pago realizado con exito!</b></p>
+
 
                         </div>
 
@@ -163,13 +172,7 @@
     </div>
     </section>
 
-
-
-
-
-
-
-
+    <script  src="js/app.js"></script>
 </body>
 
 </html>
