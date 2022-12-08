@@ -35,10 +35,10 @@
 
                                 <div class="form-row">
                                     <div class=" grupo_card form-group col-md-5" id="grupo_tarjeta">
-                                        <label for="inputEmail2" class="card_label"><b>Card #</b></label>
+                                        <label for="formGroupExampleInput" class="card_label"><b>Card #</b></label>
                                         <div class="formulario-input">
-                                            <input type="email " class="card form-control" name="tarjeta"
-                                                id="inputEmail2">
+                                            <input type="tex " class="card form-control" name="tarjeta"
+                                                id="formGroupExampleInput">
                                             <i class="validacion-estado fa-solid fa-circle-xmark"></i>
                                         </div>
                                         <p class="formulario_error">La tarjeta solo puede contener numeros y un maximo
@@ -47,10 +47,10 @@
 
 
                                     <div class="grupo_card form-group col-md-3" id="grupo_digitos">
-                                        <label for="inputPassword3"><b>CVC #</b></label>
+                                        <label for="formGroupExampleInput2"><b>CVC #</b></label>
                                         <div class="formulario-input">
                                             <input type="password" class="form-control" name="digitos"
-                                                id="inputPassword3" placeholder="000000">
+                                                id="formGroupExampleInput2" placeholder="000000">
                                             <i class="validacion-estado fa-solid fa-circle-xmark"></i>
                                         </div>
                                         <p class="formulario_error">El CVC tiene un maximo de 4 digitos</p>
@@ -58,10 +58,10 @@
 
 
                                     <div class=" grupo_card form-group col-md-4" id="grupo_amount1">
-                                        <label for="inputEmail6"><b>Amount</b></label>
+                                        <label for="formGroupExampleInput3"><b>Amount</b></label>
                                         <div class="formulario-input">
-                                            <input type="email" class="form-control" name="amount1"
-                                                id="inputEmail6" placeholder="Amount">
+                                            <input type="text" class="form-control" name="amount1"
+                                                id="formGroupExampleInput3" placeholder="Amount">
                                             <i class="validacion-estado fa-solid fa-circle-xmark"></i>
                                         </div>
                                         <p class="formulario_error">La suma debe ser mayor a 3 numeros</p>
@@ -70,10 +70,10 @@
 
                                 <div class="form-row ">
                                     <div class="grupo_card form-group col-md-6" id="grupo_nombre">
-                                        <label for="inputEmail4"><b>First Name</b></label>
+                                        <label for="formGroupExampleInput4"><b>First Name</b></label>
                                         <div class="formulario-input">
-                                            <input type="email" class="card form-control" name="nombre" id="inputEmail4"
-                                                placeholder="Luis">
+                                            <input type="text" class="card form-control" name="nombre"
+                                                id="formGroupExampleInput4" placeholder="Luis">
                                             <i class="validacion-estado fa-solid fa-circle-xmark"></i>
                                         </div>
                                         <p class="formulario_error">Nombre solo lleva letras</p>
@@ -81,13 +81,14 @@
 
 
 
-                                    <div class=" grupo_card form-group col-md-6" id="grupo_apellido">
-                                        <label for="inputEmail4"><b>Last Name</b></label>
+                                    <div class="grupo_card form-group col-md-6" id="grupo_apellido">
+                                        <label for="formGroupExampleInput5"><b>Last Name</b></label>
                                         <div class="formulario-input">
-                                            <input type="email" class="card form-control" name=" apellido"
-                                                id="inputEmail5" placeholder="Caro">
+                                            <input type="text" class="card form-control" name="apellido"
+                                                id="formGroupExampleInput5" placeholder="Caro">
+                                            <i class="validacion-estado fa-solid fa-circle-xmark"></i>
                                         </div>
-                                        <i class="validacion-estado fa-solid fa-circle-xmark"></i>
+
                                         <p class="formulario_error">Apellido solo lleva letras</p>
                                     </div>
                                 </div>
@@ -96,9 +97,15 @@
 
 
                                 <div class="form-row ">
-                                    <div class=" grupo card form-group col-md-6 " id="grupo_inputCity">
-                                        <label for="inputCity"><b>City</b></label>
-                                        <input type="text" class="form-control" name="ciudad">
+                                    <div class="grupo_card form-group col-md-6" id="grupo_ciudad">
+                                        <label for="formGroupExampleInput6"><b>Ciudad</b></label>
+                                        <div class="formulario-input">
+                                            <input type="text" class="card form-control" name="Ciudad"
+                                                id="formGroupExampleInput6" placeholder="Talca">
+                                            <i class="validacion-estado fa-solid fa-circle-xmark"></i>
+                                        </div>
+
+                                        <p class="formulario_error">Apellido solo lleva letras</p>
                                     </div>
 
 
@@ -106,7 +113,9 @@
                                         <label for="inputState"><b>State</b></label>
                                         <select id="inputState" class="form-control">
                                             <option selected>Pick a state</option>
-                                            <option>...</option>
+                                            <option>OK</option>
+                                            <option>30</option>
+                                            <option>60</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3 ">
@@ -169,12 +178,11 @@
                     <section id="Boton ">
                         <div class="card-footer text-right">
 
-                            <button type="button" class="btn btn-secondary">Cancel</button>
+                            <button type="submit" class="btn btn-secondary">Cancel</button>
 
                             <button type="submit" class="btnsend btn-primary ">Send</button>
                             <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"><b>Pago realizado
-                                    con
-                                    exito!</b></p>
+                                    con exito!</b></p>
 
 
                         </div>
