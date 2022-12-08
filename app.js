@@ -100,7 +100,8 @@ e.preventDefault();
 
     else {
         document.getElementById("alert").classList.add("alert-activo");
-        document.getElementById("red").classList.add("red-activo");
+      
+        
 
     }
 })

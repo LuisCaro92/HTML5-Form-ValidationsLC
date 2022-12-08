@@ -1,13 +1,5 @@
 
 
-.red-activo{
-    background-color:rgb(255, 181, 193);
-    opacity:0.8;
-    
-    display: block;
-    
-}
-
 .formulario_error{
     display:none;
     font-size: 12px;
