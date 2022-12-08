@@ -6,19 +6,20 @@ const expresiones = {
 
     tarjeta: /^[0-9]{4,16}$/,
     numeros: /^[0-9]{2,4}$/,
-    nombre: /^[a - zA - ZA]{1,20}$/,
-    apellido: /^[a - zA - ZA]{1,20}$/,
-    amount: /^[0-9]{3,15}$/,
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-.]+$/,
-
+    nombre: /^[a-zA-ZA]{1,20}$/,
+    apellido: /^[a-zA-ZA]{1,20}$/,
+    amount1: /^[0-9]{3,15}$/,
+    ciudad: /^[a-zA-Z]{1,20}$/,
+    codigo: /^[0-9]{4,16}$/,
 }
 const campos = {
     tarjeta: false,
     numeros: false,
     nombre: false,
     apellido: false,
-    amount: false,
-    ciudad: false
+    amount1: false,
+    ciudad: false,
+    codigo:false
 }
 
 const validarformulario = (e) => {
@@ -42,11 +43,16 @@ const validarformulario = (e) => {
             break;
 
         case "amount1":
-            validarCampo(expresiones.amount, e.target, "amount1");
+            validarCampo(expresiones.amount1, e.target, "amount1");
 
             break;
         case "ciudad":
-            validarCampo(expresiones.numeros, e.target, "ciudad");
+            validarCampo(expresiones.ciudad, e.target, "ciudad");
+
+            break;
+
+            case "codigo":
+            validarCampo(expresiones.codigo, e.target, "codigo");
 
             break;
     }
@@ -84,15 +90,17 @@ inputs.forEach((input) => {
 
 
 formulario.addEventListener("submit", (e) => {
-
-    if (campos.tarjeta && campos.digitos && campos.nombre && campos.apellido && campos.amount && campos.ciudad) {
+e.preventDefault();
+    if (campos.tarjeta && campos.digitos && campos.nombre && campos.apellido && campos.amount1 && campos.ciudad && campos.codigo) {
         formulario.reset();
 
-        document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
+        
+      
     }
 
     else {
         document.getElementById("alert").classList.add("alert-activo");
+        document.getElementById("red").classList.add("red-activo");
 
     }
 })

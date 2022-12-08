@@ -1,5 +1,13 @@
 
 
+.red-activo{
+    background-color:rgb(255, 181, 193);
+    opacity:0.8;
+    
+    display: block;
+    
+}
+
 .formulario_error{
     display:none;
     font-size: 12px;
@@ -38,13 +46,13 @@
 
 }
 
-.formulario__mensaje-exito{
+.formulario_mensaje-exito{
     font-style: initial;
     font-size: 20px;
     color: #119200;
     display:none;
 }
-.formulario__mensaje-exito-activo{
+.formulario_mensaje-exito-activo{
     display: block;
 }
 
